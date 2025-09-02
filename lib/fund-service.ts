@@ -30,8 +30,6 @@ export class FundService {
     const managementFeeAddress = '0x5c25D5d0C2cad652992bA417f8FA054F8930Ef99';
     const performanceFeeAddress = '0x82EDeB07c051D6461acD30c39b5762D9523CEf1C';
     const entranceRateDirectFeeAddress = '0xA7259E45c7Be47a5bED94EDc252FADB09769a326';
-    const allowedDepositRecipientsPolicyAddress = '0x1cF1fb97E6A4AfaA4167FA19d52AD19D6689C677';
-    const minMaxInvestmentAddress = '0xe0255c9f3B8e7DC07Cb460D09c713EA51f44feE2';
 
     // 以 Enzyme ManagementFee 合約為例
     const feeRecipient = "0x1cF1fb97E6A4AfaA4167FA19d52AD19D6689C677";
