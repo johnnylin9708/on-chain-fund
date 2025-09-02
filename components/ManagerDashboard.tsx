@@ -199,11 +199,11 @@ export default function ManagerDashboard() {
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <PerformanceChart
+              {/* <PerformanceChart
                 fundId={selectedFund}
                 fundName={funds.find(f => f.address === selectedFund)?.name}
                 height={300}
-              />
+              /> */}
               <div className="card">
                 <h3 className="font-semibold text-gray-900 mb-4">基金統計</h3>
                 {(() => {
@@ -308,18 +308,6 @@ export default function ManagerDashboard() {
                       <td className="py-4 px-4 text-gray-900">{fund.investors.toLocaleString()}</td>
                       <td className="py-4 px-4">
                         <div className="flex space-x-2">
-                          <button
-                            onClick={() => setSelectedFund(
-                              selectedFund === fund.address ? null : fund.address
-                            )}
-                            className={`px-3 py-1 text-sm rounded-md transition-colors ${
-                              selectedFund === fund.address
-                                ? 'bg-primary-600 text-white'
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                            }`}
-                          >
-                            {selectedFund === fund.address ? '隱藏圖表' : '查看圖表'}
-                          </button>
                           <Link
                             href={`/manager/fund/${fund.id}`}
                             className="btn-primary text-sm"

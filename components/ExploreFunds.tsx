@@ -212,11 +212,11 @@ export default function ExploreFunds() {
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <PerformanceChart
+              {/* <PerformanceChart
                 fundId={selectedChartFund}
                 fundName={funds.find(f => f.id === selectedChartFund)?.fundName}
                 height={300}
-              />
+              /> */}
               <div className="card">
                 <h3 className="font-semibold text-gray-900 mb-4">基金詳情</h3>
                 {(() => {
