@@ -332,49 +332,6 @@ class FundDatabaseService {
       };
     }
   }
-
-  // 獲取基金績效數據 (模擬數據，實際應該從鏈上或歷史數據計算)
-  async getFundPerformance(fundId: string): Promise<{
-    performance24h: string;
-    performance7d: string;
-    performance30d: string;
-    performanceColor24h: string;
-    performanceColor7d: string;
-    performanceColor30d: string;
-  }> {
-    try {
-      // 實際應該從歷史價格數據計算，這裡先用模擬數據
-      const performances = [
-        { perf24h: '+2.34%', perf7d: '+8.67%', perf30d: '+15.43%' },
-        { perf24h: '-0.88%', perf7d: '+5.44%', perf30d: '+12.33%' },
-        { perf24h: '+0.02%', perf7d: '+0.15%', perf30d: '+0.85%' },
-        { perf24h: '+1.45%', perf7d: '+12.33%', perf30d: '+22.11%' }
-      ];
-      
-      // 根據基金ID選擇績效數據
-      const index = parseInt(fundId) % performances.length;
-      const perf = performances[index];
-      
-      return {
-        performance24h: perf.perf24h,
-        performance7d: perf.perf7d,
-        performance30d: perf.perf30d,
-        performanceColor24h: perf.perf24h.startsWith('+') ? 'text-success-600' : 'text-danger-600',
-        performanceColor7d: perf.perf7d.startsWith('+') ? 'text-success-600' : 'text-danger-600',
-        performanceColor30d: perf.perf30d.startsWith('+') ? 'text-success-600' : 'text-danger-600'
-      };
-    } catch (error) {
-      console.error('Error getting fund performance:', error);
-      return {
-        performance24h: '+0.00%',
-        performance7d: '+0.00%',
-        performance30d: '+0.00%',
-        performanceColor24h: 'text-gray-600',
-        performanceColor7d: 'text-gray-600',
-        performanceColor30d: 'text-gray-600'
-      };
-    }
-  }
 }
 
 // 導出單例實例

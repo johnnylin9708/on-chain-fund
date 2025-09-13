@@ -98,7 +98,7 @@ export class FundService {
       params.denominationAsset,
       0, // sharesActionTimelock
       feeManagerConfigData,
-      policyManagerConfigData  // policyManagerConfigData
+      "0x"
     );
 
     const receipt = await tx.wait();

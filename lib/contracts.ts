@@ -146,17 +146,17 @@ export const formatTokenAmount = (amount: string | number | undefined, decimals 
   try {
     // 如果是字符串且包含小數點，直接格式化
     if (typeof amount === 'string' && amount.includes('.')) {
-      return parseFloat(amount).toFixed(2);
+      return parseFloat(amount).toFixed(6);
     }
     
     // 如果是純整數字符串，使用 ethers.formatEther
     if (typeof amount === 'string' && /^\d+$/.test(amount)) {
-      return parseFloat(ethers.formatEther(amount)).toFixed(2);
+      return parseFloat(ethers.formatEther(amount)).toFixed(6);
     }
     
     // 如果是數字
     if (typeof amount === 'number') {
-      return amount.toFixed(2);
+      return amount.toFixed(6);
     }
     
     return '0';
