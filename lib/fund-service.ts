@@ -75,7 +75,7 @@ export class FundService {
     // ----------- 白名單策略設定 -----------
     // 以 Enzyme AllowedDepositRecipientsPolicy 合約為例
     const ALLOWED_DEPOSIT_RECIPIENTS_POLICY_ADDRESS = '0x0eD7E38C4535989e392843884326925B4469EB5A'; // 請換成你的
-    const whitelist = ["0x1cF1fb97E6A4AfaA4167FA19d52AD19D6689C677", "0xD97198d8A4BeB435DF06b1Dc81BA383c3fc85EE4"]; // 這裡填入白名單地址
+    const whitelist = ["0x984f6F3b1Dba353dc952C7A3a8E340B48A89C947"]; // 這裡填入白名單地址
 
     const listId = await this.createAddressList(whitelist);
     // encodeSettings: abi.encode(address[] allowedDepositRecipients)
