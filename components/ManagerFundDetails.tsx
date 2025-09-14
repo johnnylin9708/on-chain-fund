@@ -92,22 +92,22 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
   // }, [fund]);
 
 
+  // useEffect(() => {
+  //   const loadRealtime = async () => {
+  //     if (fund?.vaultProxy) {
+  //       try {
+  //         const price = await getRealtimeSharePrice(fund.vaultProxy, denominationAsset.decimals);
+  //         console.log("Realtime Share Price:", price);
+  //         setRealtimePrice(Number(price));
+  //       } catch (e) {
+  //         console.warn('即時價格查詢失敗', e);
+  //       }
+  //     }
+  //   };
+  //   loadRealtime();
+  // }, []);
+
   /*useEffect(() => {
-    const loadRealtime = async () => {
-      if (fund?.vaultProxy) {
-        try {
-          const price = await getRealtimeSharePrice(fund.vaultProxy, denominationAsset.decimals);
-
-          setRealtimePrice(Number(price));
-        } catch (e) {
-          console.warn('即時價格查詢失敗', e);
-        }
-      }
-    };
-    loadRealtime();
-  }, [fund]);
-
-  useEffect(() => {
     const loadGavHistory = async () => {
       if (fund?.vaultProxy && historicalPrices.length > 0) {
         try {
@@ -740,16 +740,16 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
                 </div>
                 <div className="text-center">
                   <p className="text-2xl font-bold text-gray-900">
-                    {totalAssets.toLocaleString(undefined, { maximumFractionDigits: 4 })} WETH
+                    {totalAssets.toLocaleString(undefined, { maximumFractionDigits: 4 })}
                   </p>
                   <p className="text-sm text-gray-600">已發行份額</p>
                 </div>
-                <div className="text-center">
+                {/* <div className="text-center">
                   <p className="text-2xl font-bold text-gray-900">
                     {totalAssetsUSD !== null ? `${totalAssetsUSD.toLocaleString(undefined, { maximumFractionDigits: 2 })}` : '--'}
                   </p>
                   <p className="text-sm text-gray-600">WETH/USD</p>
-                </div>
+                </div> */}
 
                 {/* <div className="text-center">
                   <p className="text-2xl font-bold text-gray-900">{fund.totalInvestors || 0}</p>
@@ -860,7 +860,7 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
                 ))}
               </div>
             </div> */}
-            <div className="flex gap-2 mb-4">
+            {/* <div className="flex gap-2 mb-4">
               <button
                 className={`px-4 py-2 rounded ${chartType === 'sharePrice' ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-700'}`}
                 onClick={() => setChartType('sharePrice')}
@@ -909,7 +909,10 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
                 color="rgba(75, 192, 192, 1)"
                 yLabel="WETH/USD"
               />
-            )}
+            )} */}
+
+            {/* Uniswap Panel - 移動到這裡 */}
+            <UniswapPanel fund={fund} />
 
             {/* Fund Investment History */}
             <div className="card">
@@ -951,9 +954,6 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
                 )}
               </div>
             </div>
-
-            {/* Uniswap Panel - 移動到這裡 */}
-            <UniswapPanel fund={fund} />
           </div>
 
           {/* Right: Deposit/Redeem Panel and Settings */}
@@ -988,12 +988,12 @@ export default function ManagerFundDetails({ fundId }: ManagerFundDetailsProps) 
                         <span className="text-gray-600">總贖回金額</span>
                         <span className="font-medium">${parseFloat(investmentSummary.totalRedeemed).toFixed(2)}</span>
                       </div>
-                      <div className="flex justify-between">
+                      {/* <div className="flex justify-between">
                         <span className="text-gray-600">總收益</span>
                         <span className={`font-medium ${parseFloat(investmentSummary.totalReturn) >= 0 ? 'text-success-600' : 'text-danger-600'}`}>
                           ${parseFloat(investmentSummary.totalReturn).toFixed(2)} ({investmentSummary.returnPercentage}%)
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   </>
                 )}
